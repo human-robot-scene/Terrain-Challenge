@@ -10,12 +10,11 @@
   <div class="nav">
     <div class="nav-container">
       <img src="./img/iccv-navbar-logo.svg" alt="ICCV Logo" class="nav-logo">
-      <a href="#">Home</a>
+      <a href="">Home</a>
       <a href="#intro">Introduction</a>
-      <a href="#OpenSources">Open Sources</a>
+      <a href="#opensource">Open Sources</a>
       <a href="#rules">Rules</a>
       <a href="#tracks">Tracks</a>
-      <a href="#call">Call for Papers</a>
     </div>
   </div>
 
@@ -24,7 +23,7 @@
     <div class="content" style="text-align: center; margin: 20px">
       <h1>Multi-Terrain Humanoid Locomotion Challenge in Human-Robot-Scene Interaction and Collaboration</h1>
       <div class="subtitle">
-        <a href="https://iccv.thecvf.com/">ICCV 2025</a> Workshop
+        ICCV 2025 Workshop
       </div>
       <div class="subtitle">Oct 20th (Afternoon), 2025</div>
       <div class="subtitle">Honolulu, Hawai'i</div>
@@ -36,7 +35,7 @@
     <div class="section" id="intro">
       <h2>Introduction</h2>
       <p>Robust locomotion across diverse, unstructured terrain is a fundamental challenge for humanoid robots, critical for their deployment in real-world environments like homes, disaster zones, construction sites, and natural landscapes. As humanoid robots move beyond controlled labs to work alongside humans, they must navigate complex, varying surfaces reliably, efficiently, and safely to be truly useful collaborators within dynamic human-scene ecosystems.</p>
-      <p>As a key component of the <a href="https://human-robot-scene.github.io/">Human-Robot-Scene Interaction and Collaboration Workshop @ICCV2025</a> , this Multi-Terrain Humanoid Locomotion Challenge aims to accelerate progress in this vital area. We provide participants with a challenging suite of diverse terrains implemented within the high-performance Isaac Gym simulator, alongside a foundational training platform. This enables researchers to focus on developing and training advanced locomotion control policies for simulated humanoids.</p>
+      <p>As a key component of the <a href="https://human-robot-scene.github.io/">Human-Robot-Scene Interaction and Collaboration Workshop @ICCV2025</a> , this Multi-Terrain Humanoid Locomotion Challenge aims to accelerate progress in this vital area. <b>We provide participants with a challenging suite of diverse terrains implemented within the high-performance Isaac Gym simulator, alongside a foundational training platform.</b> This enables researchers to focus on developing and training advanced locomotion control policies for simulated humanoids.</p>
       <p>Our challenge focuses on advancing multi-terrain locomotion capabilities, encompassing, but not limited to:</p>
       <ul>
         <li>Developing Robust Control Policies: Training locomotion strategies (e.g., reinforcement learning, optimization-based control) that enable humanoids to stably traverse a wide variety of simulated terrains (e.g., slopes, stairs, rubble, uneven ground, slippery surfaces).</li>
@@ -46,10 +45,11 @@
       <p>This challenge provides a crucial stepping stone, enabling rapid iteration and innovation in simulation, ultimately contributing to the development of humanoid robots capable of seamless and reliable movement in the complex, multi-terrain environments they are destined to share with humans.</p> 
     </div>
 
-    <div class="section" id="OpenSources">
+    <div class="section" id="opensource">
       <h2>Open Source</h2>
       <p>
-        Our Open-source Terrain Benchmark is accessible in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">this repository</a>. You are required to use this repository to participate in the challenge using whichever robot you have, by default we provided Unitree H1_2、G1 and Fourier GR1T2 training code in Isaac Gym. Customized robots are also welcome, as long as they can be trained in Isaac Gym, but you may provide the Isaac Gym deploy config.
+        Our Open-source Terrain Benchmark is accessible in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">this repository</a>. You are required to use this repository to participate in the challenge using either Unitree H1-2, G1 or Fourier GR1, N1. 
+        <!-- Customized robots are also welcome, as long as they can be trained in Isaac Gym, but you may provide the Isaac Gym deploy config. -->
       </p>
       <h3>Resources</h3>
       <ul>
@@ -57,7 +57,7 @@
         <li><a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench/tree/master/legged_gym">Training Platform</a>: A foundational training platform for developing and testing locomotion control policies.</li>
         <li><a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench/blob/master/README.md">Documentation</a>: Comprehensive documentation to guide participants in using the benchmark effectively.</li>
         <li><a href="https://arxiv.org/abs/2505.18780" target="_blank">Reference paper</a>: We highly recommend you to read this paper to understand how to train a humanoid locomotion policy from scratch for multi-terrain crossing in Isaac Gym.</li>
-        <li>Evaluation Metrics: Standardized metrics for assessing locomotion performance across different terrains.</li>
+        <!-- <li>Evaluation Metrics: Standardized metrics for assessing locomotion performance across different terrains.</li> -->
       </ul>
     </div>
 
@@ -65,7 +65,7 @@
       <h2>Rules</h2>
       <ol>
         <li><strong>Eligibility:</strong> Participation is open to academic, industry, and independent teams worldwide. Each team may submit only one entry.</li>
-        <li><strong>Robot Requirements:</strong> You may use any simulated humanoid robot compatible with Isaac Gym. Default support is provided for Unitree H1_2, G1, and Fourier GR1T2. Custom robots are welcome but must include deployment configs for Isaac Gym and contact the organizer in advance to adapt the code properly.</li>
+        <!-- <li><strong>Robot Requirements:</strong> You may use any simulated humanoid robot compatible with Isaac Gym. Default support is provided for Unitree H1_2, G1, and Fourier GR1T2. Custom robots are welcome but must include deployment configs for Isaac Gym and contact the organizer in advance to adapt the code properly.</li> -->
         <li><strong>Submission:</strong> Teams must submit both their trained locomotion policy and the model inference code according to the provided submission guidelines. All entries must be reproducible.</li>
         <li><strong>Evaluation:</strong> All policies will be tested on a standardized suite of terrains and disturbances. Performance will be measured via completion rate and success rate. Speed is not a mandatory indicator, but in the same situation, faster speed will be better.</li>
         <li><strong>Fair Play:</strong> Use of cheating techniques, hard-coding the test environment, or exploiting simulator bugs is strictly prohibited.</li>
@@ -127,76 +127,6 @@
           </div>
         </div>
       </div>
-    </div>
-    
-    
-    
-    <!-- <div class="section" id="call">
-      <h2>Call for Papers</h2>
-      <p>
-        We invite submissions of <strong>long papers</strong> (up to 8 pages excluding references) and <strong>short papers</strong> (up to 4 pages excluding references) that explore cutting-edge research in multi-terrain humanoid locomotion.
-      </p>
-
-      <h3>Paper Topics</h3>
-      <p>
-        Topics of interest include, but are not limited to:
-      </p>
-      
-      <div class="call-topics">
-        <div class="topic-card">
-          <h4>Multi-Terrain Locomotion</h4>
-          <p>Control strategies for navigating diverse terrains including slopes, stairs, rubble, and uneven surfaces</p>
-        </div>
-        
-        <div class="topic-card">
-          <h4>Adaptive Control</h4>
-          <p>Real-time adaptation to changing terrain conditions and unexpected disturbances</p>
-        </div>
-        
-        <div class="topic-card">
-          <h4>Simulation to Reality</h4>
-          <p>Transfer learning approaches for bridging the sim-to-real gap in locomotion</p>
-        </div>
-        
-        <div class="topic-card">
-          <h4>Energy Efficiency</h4>
-          <p>Optimizing power consumption while maintaining stability on challenging terrains</p>
-        </div>
-        
-        <div class="topic-card">
-          <h4>Learning Frameworks</h4>
-          <p>Reinforcement learning, imitation learning, and hybrid approaches for locomotion</p>
-        </div>
-        
-        <div class="topic-card">
-          <h4>Benchmarking & Metrics</h4>
-          <p>Standardized evaluation protocols for multi-terrain locomotion performance</p>
-        </div>
-      </div>
-
-      <div class="important-dates">
-        <h3>Important Dates</h3>
-        <div class="date-item">
-          <div class="date-label">Paper Submission:</div>
-          <div>Waiting to decide</div>
-        </div>
-        <div class="date-item">
-          <div class="date-label">Notification to Authors:</div>
-          <div>Waiting to decide</div>
-        </div>
-        <div class="date-item">
-          <div class="date-label">Camera-Ready Deadline:</div>
-          <div>Waiting to decide</div>
-        </div>
-        <div class="date-item">
-          <div class="date-label">Workshop Date:</div>
-          <div>Waiting to decide</div>
-        </div>
-      </div> -->
-
-        <!-- <h3>Submission Guidelines</h3>
-        <p>All submissions must be in PDF format and follow the official ICCV 2025 template. Papers should be submitted through the <a href="#">CMT submission system</a> by the specified deadline.</p>
-        <p>As a dedicated sub-area within the Human-Robot-Scene Interaction and Collaboration Workshop @ICCV2025, accepted papers will be presented at the workshop and included in the proceedings.</p> -->
     </div>
 
     <footer>
