@@ -239,6 +239,18 @@ h3 {
     color: #0056b3;
 }
 
+.ref-header {
+  font-weight: bold;
+  list-style-type: none;
+  margin-left: -1.4em;
+}
+.ref-paper {
+  margin-bottom: 0.3em;
+}
+.ref-paper a {
+  text-decoration: underline;
+}
+
 #reviewers ul {
     columns: 3;
     -webkit-columns: 3;
