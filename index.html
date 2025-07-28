@@ -135,29 +135,32 @@
       <h3>Test Scenarios</h3>
       <p>Policies will be evaluated on three specialized scenarios:</p>
       <ol>
-        <li><strong>Robustness</strong>: Extended terrain sequences testing endurance</li>
-        <li><strong>Generalization</strong>: Novel terrain combinations testing adaptability</li>
-        <li><strong>Extreme</strong>: Maximum-difficulty terrains testing capability limits</li>
+        <li><strong>Robustness Testing</strong>: Extended terrain sequences testing endurance (Task weight = 0.8)</li>
+        <li><strong>Generalization Testing</strong>: Novel terrain combinations testing adaptability (Task weight = 1.2)</li>
+        <li><strong>Extreme Testing</strong>: Maximum-difficulty terrains testing capability limits (Task weight = [0.9~1.5])</li>
       </ol>
       
-      <h3>Scoring Metrics</h3>
+      <h3>Scoring Metric</h3>
       <p>Performance is measured using a weighted combination of:</p>
       <ul>
-        <li><strong>Completion Rate (60%)</strong>: Percentage of track traversed</li>
-        <li><strong>Efficiency Score (40%)</strong>: Timesteps normalized by completion percentage</li>
+        <li><strong>Completion Rate (weight = 0.8)</strong>: Percentage of track traversed</li>
+        <li><strong>Success Rate (weight = 1.2)</strong>: Track completion percentage</li>
+        <li><strong>Efficiency Score (additional)</strong>: Timesteps normalized by completion percentage</li>
       </ul>
       
       <h4>Scoring Formula</h4>
       <div style="color: gray;"><strong>Score Metric Keep Tuned!</strong></div>
-      <p>Total Score = (Completion %) × 60 + (Efficiency Factor) × 40</p>
+      <p>Task Score = ( (Success Rate ) × 1.2 + (Completion Rate) × 0.8) * (Task weight) * (Baseline time cost / Time cost)</p>
       
       <div class="highlight-box">
         <strong>Example Calculation:</strong><br>
-        If a robot completes 80% of a track in 500 timesteps:<br>
-        Completion Score = 80% × 60 = 48<br>
-        Efficiency Factor = (Reference Time / Actual Time) × Completion % = (400/500) × 80% = 64%<br>
-        Efficiency Score = 64% × 40 = 25.6<br>
-        <strong>Total Score = 48 + 25.6 = 73.6</strong>
+
+        If a robot gets 60% Success Rate and 80% Completion Rate of a Scenarios in Robustness Track with 500 timesteps:<br>
+        The baseline finished the Robustness Track used 400 timesteps<br>
+        Task Score = (60 * 1.2 + 80 * 0.8)* 0.8 * (400/500) = 87.04<br>
+
+        If the baseline used 800 timesteps:<br>
+        Task Score = (60 * 1.2 + 80 * 0.8)* 0.8 * (800/500) = 174.08<br>
       </div>
       
       <p>Full evaluation details and reference times will be published in the starter kit.</p>
