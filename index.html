@@ -13,7 +13,7 @@
       <a href="">Home</a>
       <a href="#overview">Overview</a>
       <a href="#participation">Participation</a>
-      <a href="#metrics">Protocols</a>
+      <a href="#evaluation">Evaluation</a>
       <a href="#opensource">Codes</a>
     </div>
   </div>
@@ -55,9 +55,8 @@
           <strong>Registration template</strong>
           <p><i>Subject</i>: [ICCV2025-HRSIC]Humanoid Locomotion Challenge Registration</p>
           <p><i>Body</i>:<br>
-            Here is our registration information:<br>
-            [Team Name], [Team Leader/Point of Contact], [Primary Contact Email]<br>
-            1. [Team Member 1], [Affiliation]<br>
+            Here is our registration information of [Team Name]:<br>
+            1. Point of Contact: [Team Member 1], [Affiliation], [Email]<br>
             2. [Team Member 2], [Affiliation]<br>
             ...<br>
             Whether to open-source the code (for awards): [Yes/No]<br>
@@ -84,16 +83,17 @@
 
       <div class="subsection">
         <h3><b style="color: red">🏆 Awards</b></h3>
+        <img src="./img/fourier-logo.png" alt="Fourier Logo">
         <p>
-          🥇 First Prize ($1000) 🥈 Second Prize ($500) 🥉 Third Prize ($300)
+          Thanks to our sponsors at <a href="https://www.fftai.com/">Fourier</a>: 🥇 First Prize ($1000) 🥈 Second Prize ($500) 🥉 Third Prize ($300)
         </p>
         <div class="highlight-box">
-          <b>Participants need to open-source their code to be eligible for awards.</b> However, you can still participate in the challenge without open-sourcing your code. If you want to change your initial response regarding open-sourcing your code, please contact us.
+          <b>Participants need to open-source their code to be eligible for awards.</b> However, you can still participate in the challenge without open-sourcing your code. If you want to change your response regarding open-sourcing your code, please contact us.
         </div>
       </div>
     </div>
 
-    <div class="section" id="metrics">
+    <div class="section" id="evaluation">
       <h2>Evaluation</h2>
 
       <div class="subsection">
@@ -108,7 +108,7 @@
           <li>Terrain height samples around the robot ([terrain_sampling_details])</li>
           <li>Previous action values ([action_history_details])</li>
         </ul>
-        <p>Complete observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repo</a>. <strong style="color: red">Stay tuned!</strong></p>
+        <p>Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repo</a>. <strong style="color: red">Stay tuned!</strong></p>
 
         <h4><b>Output (Action Space)</b></h4>
         <p>Your policy must output:</p>
@@ -116,7 +116,7 @@
           <li>Target joint positions ([joint_target_details])</li>
         </ul>
         <div class="highlight-box">
-          <strong>Note:</strong> Your policy must align with the provided observation space.
+          <strong>Note:</strong> Your policy must align with the provided observation and action spaces.
           <!-- We recommend using distillation if you've trained with customized observations. -->
         </div>
       </div>
@@ -133,53 +133,44 @@
       </div>
 
       <h3>Test Scenarios</h3>
-      <p>Policies will be evaluated on three specialized scenarios:</p>
+      <p>Policies will be evaluated on three specialized scenarios (detailed in <a href="#scenarios">Scenarios</a>):</p>
       <ol>
-        <li><strong>Robustness Testing</strong>: Extended terrain sequences testing endurance (Task weight = 0.8)</li>
-        <li><strong>Generalization Testing</strong>: Novel terrain combinations testing adaptability (Task weight = 1.2)</li>
-        <li><strong>Extreme Testing</strong>: Maximum-difficulty terrains testing capability limits (Task weight = [0.9~1.5])</li>
+        <li><strong>Robustness Testing</strong>: Extended terrain sequences testing endurance</li>
+        <li><strong>Generalization Testing</strong>: Novel terrain combinations testing adaptability</li>
+        <li><strong>Extreme Testing</strong>: Maximum-difficulty terrains testing capability limits</li>
       </ol>
       
       <h3>Scoring Metric</h3>
-      <p>Performance is measured using a weighted combination of:</p>
+      <p>We compute two metrics for each evaluation episode:</p>
       <ul>
-        <li><strong>Completion Rate (weight = 0.8)</strong>: Percentage of track traversed</li>
-        <li><strong>Success Rate (weight = 1.2)</strong>: Track completion percentage</li>
-        <li><strong>Efficiency Score (additional)</strong>: Timesteps normalized by completion percentage</li>
+        <li><strong>Completion Rate</strong> (higher is better): Percentage of traversed distance over total length</li>
+        <li><strong>Efficiency Score</strong> (lower is better): Elapsed timesteps normalized by max timesteps (only for completed episodes)</li>
       </ul>
       
-      <h4>Scoring Formula</h4>
-      <div style="color: gray;"><strong>Score Metric Keep Tuned!</strong></div>
-      <p>Task Score = ( (Success Rate ) × 1.2 + (Completion Rate) × 0.8) * (Task weight) * (Baseline time cost / Time cost)</p>
-      
+      <h4><b>Scoring Formula</b></h4>
       <div class="highlight-box">
-        <strong>Example Calculation:</strong><br>
-
-        If a robot gets 60% Success Rate and 80% Completion Rate of a Scenarios in Robustness Track with 500 timesteps:<br>
-        The baseline finished the Robustness Track used 400 timesteps<br>
-        Task Score = (60 * 1.2 + 80 * 0.8)* 0.8 * (400/500) = 87.04<br>
-
-        If the baseline used 800 timesteps:<br>
-        Task Score = (60 * 1.2 + 80 * 0.8)* 0.8 * (800/500) = 174.08<br>
+        <p>Episode Score = Completion Rate × 0.9 + (1 - Efficiency Score) × 0.1</p>
+        <p style="color: gray;"><strong>The scoring formula might change. Stay tuned!</strong></p>
       </div>
-      
-      <p>Full evaluation details and reference times will be published in the starter kit.</p>
-
+      <p>The score will be averaged across all scenario episodes for each robot. The award is selected based on the total score summed over all robots.</p>  
     </div>
 
     <div class="section" id="opensource">
       <h2>Codes</h2>
       <p>
-        Our Open-source Terrain Benchmark is accessible in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">this repository</a>.
+        Our open-source Terrain Benchmark is accessible in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">this repository</a>.
       </p>
       <h3>Resources</h3>
       <ul>
         <li><a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench/tree/master/challenging_terrain">Terrain Suite</a>: A diverse set of terrains implemented in Isaac Gym, including slopes, stairs, rubble, uneven ground, and slippery surfaces.</li>
         <li><a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench/tree/master/legged_gym">Training Platform</a>: A foundational training platform for developing and testing locomotion control policies.</li>
         <li><a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench/blob/master/README.md">Documentation</a>: Comprehensive documentation to guide participants in using the benchmark effectively.</li>
-        
-        <!-- Reference Papers Section -->
-        <li class="ref-header">Reference Papers:</li>
+      </ul>
+
+      <!-- Reference Papers Section -->
+      <h3>Reference Papers</h3>
+      <ul class="ref-papers">
+        <!-- <li class="ref-header">Reference Papers:</li> -->
         <li class="ref-paper">
           <a href="https://arxiv.org/abs/2505.18780" target="_blank">One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid Locomotion</a>.
         </li>
