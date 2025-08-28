@@ -70,8 +70,11 @@
 
       <div class="subsection">
         <h3>Submission</h3>
-        <p>We innovatively utilize a client-server architecture for policy evaluation. The server hosts the simulated evaluation environments, while clients evaluate their policies via our provided REST API. The REST API is designed to have the same interface as <strong>gym</strong>, e.g., <code>env.reset()</code> and <code>env.step(action)</code>. Thus no modifications are needed for existing gym-compatible policies. The results will be shown on the public leaderboard.</p>
-        <p>Please refer to <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repo</a> for more details. The REST API will be available soon. <strong style="color: red">Stay tuned!</strong></p>
+        <p>
+          We innovatively utilize a client-server architecture for policy evaluation. The server hosts the simulated evaluation environments, while clients evaluate their policies via our provided REST API. 
+          The REST API is designed to have the same interface as <strong>gym</strong>, e.g., <code>env.reset()</code> and <code>env.step(action)</code>. Thus no modifications are needed for existing gym-compatible policies. The results will be shown on the public leaderboard. 
+          Export and submit a JIT-compiled model. Use our exporter template as a guide, you may implement your own JIT exporter and produce a serialized JIT model compatible with the evaluation runner.
+        </p>
       </div>
 
       <div class="subsection">
@@ -100,30 +103,33 @@
     <div class="section" id="evaluation">
       <h2>Evaluation</h2>
 
-      <div class="subsection">
+      
+    <div class="subsection">
         <h3>Policy Specifications</h3>
         <p>Your policy must process standardized observations and output specific control signals.</p>
 
         <h4><b>Input (Observation Space)</b></h4>
-        <p>The policy will receive the following observations at each timestep:</p>
-        <ul>
-          <li>Joint positions and velocities ([joint_details])</li>
-          <li>Base orientation and angular velocity ([base_orientation_details])</li>
-          <li>Terrain height samples around the robot ([terrain_sampling_details])</li>
-          <li>Previous action values ([action_history_details])</li>
-        </ul>
-        <p>Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repo</a>. <strong style="color: red">Stay tuned!</strong></p>
+        <p>The policy receives the following observations at each timestep, in the exact order as concatenated in the observation buffer:</p> 
+        <ul> 
+            <li><strong>Base angular velocity</strong></li> 
+            <li><strong>Base orientation</strong></li> 
+            <li><strong>Joint positions</strong></li> 
+            <li><strong>Joint velocities</strong></li> 
+            <li><strong>Previous action</strong></li> 
+            <li><strong>Terrain height samples</strong></li> 
+        </ul> 
+        <p>Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repository</a>. <strong style="color: red">Stay tuned!</strong></p>
 
         <h4><b>Output (Action Space)</b></h4>
         <p>Your policy must output:</p>
         <ul>
-          <li>Target joint positions ([joint_target_details])</li>
+            <li>Target joint positions</li>
         </ul>
         <div class="highlight-box">
-          <strong>Note:</strong> Your policy must align with the provided observation and action spaces.
-          <!-- We recommend using distillation if you've trained with customized observations. -->
+            <strong>Note:</strong> Your policy must align with the provided observation and action spaces.
+            <!-- We recommend using distillation if you've trained with customized observations. -->
         </div>
-      </div>
+    </div>
       
       <div class="subsection">
         <h3>Robots</h3>
