@@ -76,6 +76,18 @@
           Export and submit a JIT-compiled model. Use our exporter template as a guide, you may implement your own JIT exporter and produce a serialized JIT model compatible with the evaluation runner.
         </p>
       </div>
+      <div class="link-cards">
+        <div class="card">
+            <h4>Submission Entry</h4>
+            <p>Submit your JIT-compiled model for evaluation through our REST API.</p>
+            <a href="http://47.99.116.174:6100" target="_blank">Submit Model</a>
+        </div>
+        <div class="card">
+            <h4>Leaderboard</h4>
+            <p>Check the current rankings and results on our public leaderboard.</p>
+            <a href="http://47.99.116.174:6300" target="_blank">View Leaderboard</a>
+        </div>
+    </div>
 
       <div class="subsection">
         <h3>Important Dates</h3>
@@ -118,7 +130,7 @@
             <li><strong>Previous action</strong></li> 
             <li><strong>Terrain height samples</strong></li> 
         </ul> 
-        <p>Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repository</a>. <strong style="color: red">Stay tuned!</strong></p>
+        <p>Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repository</a>.</p>
 
         <h4><b>Output (Action Space)</b></h4>
         <p>Your policy must output:</p>
@@ -160,7 +172,7 @@
       <h4><b>Scoring Formula</b></h4>
       <div class="highlight-box">
         <p>Episode Score = Completion Rate × 0.9 + (1 - Efficiency Score) × 0.1</p>
-        <p style="color: gray;"><strong>The scoring formula might change. Stay tuned!</strong></p>
+        <p style="color: gray;"><strong>The scoring formula might change. </strong></p>
       </div>
       <p>The score will be averaged across all scenario episodes for each robot. The award is selected based on the total score summed over all robots.</p>  
     </div>
@@ -260,8 +272,6 @@
       <h2>Rules</h2>
       <ol>
         <li><strong>Eligibility:</strong> Participation is open to academic, industry, and independent teams worldwide. </li>
-        <!-- <li><strong>Submission:</strong> Submit trained policies through our online system as described in the <a href="#policy">Policy & Participation</a> section.</li> -->
-        <!-- <li><strong>Evaluation:</strong> Policies will be evaluated on the three competition tracks using the <a href="#metrics">Evaluation Protocol</a>.</li> -->
         <li><strong>Fair Play:</strong> Use of cheating techniques, hard-coding the test environment, or exploiting simulator bugs is strictly prohibited.</li>
         <li><strong>Final Decisions:</strong> The organizing committee reserves the right to make final decisions regarding rule interpretation and winner selection.</li>
       </ol>
