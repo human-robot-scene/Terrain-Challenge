@@ -122,15 +122,53 @@
 
         <h4><b>Input (Observation Space)</b></h4>
         <p>The policy receives the following observations at each timestep, in the exact order as concatenated in the observation buffer:</p> 
-        <ul> 
-            <li><strong>Base angular velocity</strong></li> 
-            <li><strong>Base orientation</strong></li> 
-            <li><strong>Joint positions</strong></li> 
-            <li><strong>Joint velocities</strong></li> 
-            <li><strong>Previous action</strong></li> 
-            <li><strong>Terrain height samples</strong></li> 
-        </ul> 
-        <p>Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repository</a>.</p>
+        <table border="1" cellspacing="0" cellpadding="8" align="center" style="border-collapse: collapse; text-align: left; width: 100%;">
+          <thead>
+            <tr>
+              <th>Observation</th>
+              <th>Dimension</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Base angular velocity</strong></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><strong>Base orientation</strong></td>
+              <td>4 (quaternion)</td>
+            </tr>
+            <tr>
+              <td><strong>Current yaw error</strong></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><strong>Next yaw error</strong></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><strong>Forward velocity command</strong></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><strong>Joint positions</strong></td>
+              <td>N<sub>j</sub></td>
+            </tr>
+            <tr>
+              <td><strong>Joint velocities</strong></td>
+              <td>N<sub>j</sub></td>
+            </tr>
+            <tr>
+              <td><strong>Previous actions</strong></td>
+              <td>N<sub>j</sub></td>
+            </tr>
+            <tr>
+              <td><strong>Terrain height samples</strong></td>
+              <td>132</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Where N<sub>j</sub> is equal to the specified robot’s number of degrees of freedom. Detailed observation specifications will be provided in <a href="https://github.com/shiki-ta/Humanoid-Terrain-Bench">our challenge repository</a>. <strong style="color: red">Stay tuned!</strong></p>
 
         <h4><b>Output (Action Space)</b></h4>
         <p>Your policy must output:</p>
@@ -172,7 +210,6 @@
       <h4><b>Scoring Formula</b></h4>
       <div class="highlight-box">
         <p>Episode Score = Completion Rate × 0.9 + (1 - Efficiency Score) × 0.1</p>
-        <p style="color: gray;"><strong>The scoring formula might change. </strong></p>
       </div>
       <p>The score will be averaged across all scenario episodes for each robot. The award is selected based on the total score summed over all robots.</p>  
     </div>
