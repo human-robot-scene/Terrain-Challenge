@@ -12,6 +12,7 @@
       <img src="./img/iccv-navbar-logo.svg" alt="ICCV Logo" class="nav-logo">
       <a href="">Home</a>
       <a href="#overview">Overview</a>
+      <a href="#winners">Winners</a>
       <a href="#participation">Participation</a>
       <a href="#evaluation">Evaluation</a>
       <a href="#opensource">Codes</a>
@@ -44,6 +45,75 @@
         <li><strong>Minimize completion time</strong> - Achieve the same distance as fast as possible</li>
       </ol>
       <p>The final score combines both distance coverage and efficiency metrics.</p>
+      <div class="highlight-box" style="border-left-color: #28a745; background-color: #f1fbf4;">
+        <strong style="font-size: 1.1em;">
+          📢 Challenge Status
+        </strong>
+        <p style="margin-top: 8px;">
+          This challenge has been successfully completed as part of the
+          <b>ICCV 2025 Workshop on Human-Robot-Scene Interaction and Collaboration</b> workshop.
+        </p>
+        <p>
+          The final leaderboard has been frozen, and all submitted policies have been
+          evaluated under standardized multi-terrain scenarios.
+          The announced winners represent the state of the art in robust humanoid locomotion.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="winners">
+      <h2>🏆 Final Winners</h2>
+      <div class="winners-container">
+        <!-- First Place -->
+        <div class="winner-card first">
+          <div class="rank">🥇 1st Place</div>
+          <div class="team-name">TeleRobot</div>
+          <div class="score">Score: <b>798.29</b></div>
+
+          <div class="team-info">
+            <div class="team-members">
+              <span class="label">Members:</span>
+              Chenyun Zhang, Xinzhe Liu, Dewei Wang, Xinmiao Wang, Chenjia Bai, Xuelong Li
+            </div>
+            <div class="team-affiliation">
+              <span class="label">Affiliation:</span>
+              Institute of Artificial Intelligence, China Telecom (TeleAI)
+            </div>
+          </div>
+        </div>
+        <!-- Second Place -->
+        <div class="winner-card second">
+          <div class="rank">🥈 2nd Place</div>
+          <div class="team-name">Magic-Locomotion</div>
+          <div class="score">Score: <b>506.53</b></div>
+          <div class="team-info">
+            <div class="team-members">
+              <span class="label">Members:</span>
+              Yue Chen, Haoran Lu, Chuye Hong, Ruihai Wu, Hao Dong
+            </div>
+            <div class="team-affiliation">
+              <span class="label">Affiliation:</span>
+              Peking University, Tsinghua University, Northwestern University
+            </div>
+          </div>
+        </div>
+        <!-- Third Place -->
+        <div class="winner-card third">
+          <div class="rank">🥉 3rd Place</div>
+          <div class="team-name">AidenBH</div>
+          <div class="score">Score: <b>396.15</b></div>
+          <div class="team-info">
+            <div class="team-members">
+              <span class="label">Members:</span>
+              Jindi Ouyang
+            </div>
+            <div class="team-affiliation">
+              <span class="label">Affiliation:</span>
+              Tsinghua University
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- New Policy & Participation Section -->
@@ -76,7 +146,7 @@
           Export and submit a JIT-compiled model. Use our exporter template as a guide, you may implement your own JIT exporter and produce a serialized JIT model compatible with the evaluation runner.
         </p>
       </div>
-      <div class="link-cards">
+      <!-- <div class="link-cards">
         <div class="card">
             <h4>Submission Entry</h4>
             <p>Submit your JIT-compiled model for evaluation through our REST API.</p>
@@ -87,7 +157,7 @@
             <p>Check the current rankings and results on our public leaderboard.</p>
             <a href="http://47.99.116.174:6300" target="_blank">View Leaderboard</a>
         </div>
-    </div>
+    </div> -->
 
       <div class="subsection">
         <h3>Important Dates</h3>
@@ -100,11 +170,11 @@
 
       <div class="subsection">
         <h3><b style="color: red">🏆 Awards</b></h3>
-        <img src="./img/Unitree-logo.svg" alt="Unitree Logo" style="width: 20rem; height: auto;">
-        <br>
         <img src="./img/fourier-logo.png" alt="Fourier Logo" style="width: 20rem; height: auto;">
+        <br>
+        <img src="./img/Unitree-logo.svg" alt="Unitree Logo" style="width: 20rem; height: auto;">
         <p>
-          Thanks to our sponsors at <a href="https://www.unitree.com/">Unitree</a> and <a href="https://www.fftai.com/">Fourier</a>: 🥇 First Prize ($1000) 🥈 Second Prize ($500) 🥉 Third Prize ($300)
+          Thanks to our sponsors at <a href="https://www.fftai.com/">Fourier</a> and <a href="https://www.unitree.com/">Unitree</a>: 🥇 First Prize ($1000) 🥈 Second Prize ($500) 🥉 Third Prize ($300)
         </p>
         <div class="highlight-box">
           <b>Participants need to open-source their code to be eligible for awards.</b> However, you can still participate in the challenge without open-sourcing your code. If you want to change your response regarding open-sourcing your code, please contact us.

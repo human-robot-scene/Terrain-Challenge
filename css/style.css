@@ -309,6 +309,91 @@ footer {
     background-color: #3367d6;
 }
 
+/* ===== Winners Podium ===== */
+.winners-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.winner-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #ccc;
+}
+
+.winner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.winner-card .rank {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.winner-card .team-name {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.winner-card .score {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Rank-specific colors */
+.winner-card.first {
+    border-top-color: #f4c430; /* Gold */
+    background: linear-gradient(180deg, #fffaf0, #ffffff);
+}
+
+.winner-card.second {
+    border-top-color: #b0b0b0; /* Silver */
+    background: linear-gradient(180deg, #f7f7f7, #ffffff);
+}
+
+.winner-card.third {
+    border-top-color: #cd7f32; /* Bronze */
+    background: linear-gradient(180deg, #fff5ec, #ffffff);
+}
+
+/* ===== Winner extra info ===== */
+.team-info {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px dashed #ddd;
+    font-size: 0.95em;
+    color: #444;
+    text-align: left;
+}
+
+.team-info .label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-right: 6px;
+}
+
+.team-members,
+.team-affiliation {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* Slight visual hierarchy */
+.team-affiliation {
+    color: #666;
+    font-style: italic;
+}
+
 @media (max-width: 600px) {
     .link-cards {
         flex-direction: column;
